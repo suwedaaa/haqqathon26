@@ -1,0 +1,90 @@
+@import "../styles/_variables.scss";
+
+.container {
+
+  position: relative;
+
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+
+.card {
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 80px;
+  padding: 50px 60px;
+  border-radius: 16px;
+  border: 1px solid $border-color;
+  background: $background-card;
+  height: 320px;
+
+}
+
+.image {
+
+  width: 220px;
+  height: 220px;
+
+  min-width: 220px;
+  min-height: 220px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+}
+
+
+.text {
+
+  color: $text-primary;
+
+  width: 400px;
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.arrow {
+
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: transparent;
+  border: none;
+
+  color: $accent-primary;
+  font-size: 28px;
+  cursor: pointer;
+
+}
+
+.left {
+
+  left: 20px;
+
+}
+
+.right {
+
+  right: 20px;
+
+}
+
+.section {
+
+  padding: 140px 20px;
+
+}
+

@@ -1,0 +1,19 @@
+@import "../styles/variables";
+
+.section {
+
+  padding: 140px 20px;
+  text-align: center;
+
+}
+
+.title {
+
+  display: inline-block;
+  border: 1px solid $border-color;
+  padding: 15px 80px;
+  margin-bottom: 80px;
+  color: $text-primary;
+  letter-spacing: 2px;
+
+}
