@@ -1,0 +1,129 @@
+.faqSection {
+  padding: 90px 0;
+}
+
+.container {
+  width: min(1000px, 92%);
+  margin: 0 auto;
+}
+
+.titleBox {
+  width: min(520px, 90%);
+  margin: 0 auto 40px;
+  border: none;
+  padding: 14px 18px;
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 44px;
+  }
+}
+
+.list {
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40px 1fr 46px;
+  align-items: center;
+
+  padding: 18px 20px;
+  border-radius: 14px;
+
+  background: rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(217, 179, 112, 0.9);
+
+  cursor: pointer;
+
+  /* key: centers the QUESTION column */
+  text-align: center;
+}
+
+.question {
+  justify-self: center; /* puts it dead-center in the 1fr column */
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.6px;
+}
+
+.leftIcon {
+  display: grid;
+  place-items: center;
+  opacity: 0.9;
+}
+
+.header:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transition: 0.25s ease;
+}
+.plus {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(217, 179, 112, 0.9);
+  font-size: 18px;
+  line-height: 1;
+
+  transition: transform 200ms ease;
+}
+
+.plusOpen {
+  transform: rotate(45deg); // turns + into an X-ish; or visually like "close"
+}
+
+/* Collapsible body */
+.body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 280ms ease;
+}
+
+.bodyOpen {
+  max-height: 200px; // enough for most answers
+}
+
+.answer {
+  margin: 12px 10px 0;
+  padding: 18px 16px;
+
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.35);
+
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.95;
+  text-align: center;
+}
+
+.ctaWrap {
+  margin-top: 42px;
+  display: flex;
+  justify-content: center;
+}
+
+.cta {
+  display: inline-block;
+  padding: 14px 40px;
+  border-radius: 10px;
+
+  border: 2px solid rgba(217, 179, 112, 0.9);
+  background: rgba(0, 0, 0, 0.25);
+
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+}
