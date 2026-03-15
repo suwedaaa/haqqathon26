@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap');
+
 $text-primary: #ffffff; // White
 $text-secondary: #73C58B; // Green
 
@@ -6,3 +8,16 @@ $accent-secondary: #BFA372; // Gold-ish
 
 $background-card: rgba(217, 217, 217, 0.3); // Semi-transparent light gray
 $border-color: #ffffff; // White
+
+$about-card-bg : #25372E;
+$about-card-border: #585F2D9C;
+
+$border-gradient-top: rgba(67, 129, 80, 0.5);
+$border-gradient-bottom: rgba(175, 196, 38, 0.61);
+$box-shadow: 8px 14px 20px rgba(142, 183, 88, 0.4);
+
+$badge-gradient: linear-gradient(180deg, #458766 100%, rgba(69, 135, 102, 0.8) 80%);
+$font-secondary : 'Arima', cursive;
+
+$answer-color: #D5EAD4;
+$glow-effect: radial-gradient(circle, rgba(134, 140, 21, 0.153) 0%, transparent 70%);
