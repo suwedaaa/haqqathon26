@@ -26,7 +26,7 @@ export default function AboutCarousel() {
 
 
           <div style={{ textAlign: "left" }}>
-            <Link href="https://linktr.ee/StemMuslims" target="_blank" className={styles.link}>
+            <Link href="https://stemmuslims.com" target="_blank" className={styles.link}>
               <button className={styles.button}>
                 Visit the STEMM website <FaArrowRight size={14}/>
               </button>
