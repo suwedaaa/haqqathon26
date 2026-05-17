@@ -1,0 +1,37 @@
+@import "../../styles/variables";
+
+.timer {
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 0.5rem 0 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.progress {
+  height: 18px;
+  border: 1px inset #c0c0c0;
+  background: #fff;
+  margin-bottom: 1rem;
+  padding: 2px;
+}
+
+.progressFill {
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #3d9ae8 0,
+    #3d9ae8 12px,
+    #6eb8ff 12px,
+    #6eb8ff 24px
+  );
+  transition: width 0.5s ease;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}

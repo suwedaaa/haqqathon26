@@ -1,0 +1,82 @@
+@import "../../styles/variables";
+
+.panel {
+  position: relative;
+  overflow: visible;
+}
+
+.dolphin {
+  position: absolute;
+  top: -2.5rem;
+  left: -0.5rem;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 16px rgba(60, 140, 220, 0.4));
+  width: clamp(80px, 18vw, 120px);
+  height: auto;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($accent-blue, 0.5);
+    border-radius: 4px;
+  }
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto;
+  gap: 0.65rem;
+  align-items: start;
+}
+
+.time {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: $accent-blue-dark;
+}
+
+.details h4 {
+  margin: 0 0 0.15rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.details p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+}
+
+.dayToggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.active {
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 2px;
+}

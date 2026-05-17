@@ -1,0 +1,185 @@
+@import "../../styles/variables";
+
+.section {
+  position: relative;
+}
+
+.bodyWrap {
+  position: relative;
+  min-height: 320px;
+}
+
+.menuBar {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.25rem 0.35rem;
+  border-bottom: 1px solid #aca899;
+  margin-bottom: 0.35rem;
+  color: #000;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0.35rem;
+  min-height: 220px;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.25rem;
+  background: #ece9d8;
+  border: 1px inset #fff;
+}
+
+.tool {
+  width: 28px;
+  height: 28px;
+  background: #ece9d8;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: #aca899;
+  }
+}
+
+.canvas {
+  background: #fff;
+  border: 1px inset #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: cover;
+}
+
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 0.35rem;
+  padding: 0.25rem;
+  background: #ece9d8;
+  border-top: 1px solid #aca899;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #404040;
+}
+
+.statusBar {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.35rem;
+  background: #ece9d8;
+  border-top: 1px solid #aca899;
+  color: #000;
+  margin-top: 0.25rem;
+}
+
+.overlays {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.profileWindow,
+.miniWindow,
+.joinWindow {
+  position: absolute;
+  pointer-events: auto;
+  max-width: min(220px, 90vw);
+}
+
+.profileWindow {
+  top: 12%;
+  right: 4%;
+  z-index: 3;
+}
+
+.miniStack {
+  top: 38%;
+  right: 6%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.joinWindow {
+  bottom: 4%;
+  left: 8%;
+  z-index: 5;
+}
+
+.profileBody {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  background: #c0c0c0;
+  border: 1px inset #808080;
+}
+
+.profileText strong {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.profileText span {
+  font-size: 0.75rem;
+}
+
+.miniBody {
+  padding: 0.25rem 0;
+  text-align: center;
+}
+
+@media (max-width: $breakpoint-md) {
+  .profileWindow {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 1rem auto 0;
+  }
+
+  .miniStack {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0.75rem auto;
+    align-items: center;
+  }
+
+  .joinWindow {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin: 0.75rem auto 0;
+  }
+
+  .overlays {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    pointer-events: auto;
+  }
+}

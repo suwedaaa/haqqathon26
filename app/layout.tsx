@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Libre_Baskerville } from "next/font/google";
+import "../styles/xp-compat.css";
 import "./globals.scss";
-
-const libreBaskerville = Libre_Baskerville({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Haqqathon 2026",
-  description: "The largest muslim student-led hackathon in the world, empowering the next generation of innovators to build impactful solutions.",
+  description:
+    "The largest Muslim student-led hackathon in the world, empowering the next generation of innovators to build impactful solutions.",
 };
 
 export default function RootLayout({
@@ -19,9 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={libreBaskerville.className}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

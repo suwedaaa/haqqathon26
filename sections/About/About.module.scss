@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.content {
+  display: grid;
+  gap: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+}
+
+.text {
+  margin: 0;
+  color: $text-on-glass;
+}
+
+.highlight {
+  color: $accent-blue-dark;
+  font-weight: 700;
+}
+
+.globe {
+  justify-self: center;
+  filter: drop-shadow(0 6px 12px rgba(60, 140, 220, 0.35));
+}

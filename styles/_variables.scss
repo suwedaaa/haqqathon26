@@ -1,21 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap');
+// Frutiger Aero palette
+$sky-top: #b8e4ff;
+$sky-mid: #9fd4f5;
+$sky-bottom: #d4f0e8;
 
-$text-primary: #ffffff; // White
-$text-secondary: #73C58B; // Green
+$text-primary: #1a3a52;
+$text-secondary: #2d6a9e;
+$text-on-glass: #234a66;
 
-$accent-primary: #ffffff; // White
-$accent-secondary: #BFA372; // Gold-ish
+$accent-blue: #3d9ae8;
+$accent-blue-dark: #1e6fb8;
+$accent-green: #5cd65c;
+$accent-green-dark: #2da82d;
 
-$background-card: rgba(217, 217, 217, 0.3); // Semi-transparent light gray
-$border-color: #ffffff; // White
+$glass-bg: rgba(255, 255, 255, 0.55);
+$glass-border: rgba(255, 255, 255, 0.8);
 
-$about-card-bg : #25372E;
-$about-card-border: #585F2D9C;
+$overlay-tint: rgba(180, 220, 255, 0.1);
+$overlay-scanlines: rgba(255, 255, 255, 0.08);
 
-$box-shadow: 8px 14px 20px rgba(195, 230, 151, 0.4);
+$shell-bg: rgba(200, 230, 255, 0.35);
+$shell-border: rgba(255, 255, 255, 0.65);
 
-$badge-gradient: linear-gradient(180deg, #458766 100%, rgba(69, 135, 102, 0.8) 80%);
-$font-secondary : 'Arima', cursive;
-$answer-color: #D5EAD4;
+$font-ui: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$font-display: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-//$glow-effect: radial-gradient(circle, rgba(134, 140, 21, 0.153) 0%, transparent 70%);
+$radius-lg: 20px;
+$radius-md: 12px;
+$radius-pill: 999px;
+
+$z-background: 0;
+$z-bubbles: 1;
+$z-overlay-mid: 2;
+$z-content: 3;
+$z-overlay-top: 4;
+
+$placeholder-image: "/speakers/sponsor-areeb-siddiqui.png";
+
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;

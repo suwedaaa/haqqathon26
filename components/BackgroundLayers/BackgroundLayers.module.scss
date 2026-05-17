@@ -1,0 +1,57 @@
+@import "../../styles/variables";
+
+.root {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.pattern {
+  position: fixed;
+  inset: 0;
+  z-index: $z-background;
+  background-image: url("/background.png");
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top center;
+}
+
+.bubbles {
+  position: fixed;
+  inset: 0;
+  z-index: $z-bubbles;
+  pointer-events: none;
+}
+
+.overlayMid,
+.overlayTop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.overlayMid {
+  z-index: $z-overlay-mid;
+  background: $overlay-tint;
+}
+
+.overlayTop {
+  z-index: $z-overlay-top;
+  background-image: url("/scanlines-overlay.png");
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+
+.content {
+  position: relative;
+  z-index: $z-content;
+  padding: 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 1.5rem 2rem 3rem;
+  }
+}

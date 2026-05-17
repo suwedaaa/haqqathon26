@@ -1,129 +1,102 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
 .faqSection {
-  padding: 90px 0;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .container {
-  width: min(1000px, 92%);
-  margin: 0 auto;
+  @include glass-panel(18px, $glass-bg);
+  border-radius: $radius-lg;
+  padding: 1.25rem;
+  color: $text-on-glass;
 }
 
 .titleBox {
-  width: min(520px, 90%);
-  margin: 0 auto 40px;
-  border: none;
-  padding: 14px 18px;
-  text-align: center;
+  margin-bottom: 1rem;
 
   h2 {
+    @include tab-header($accent-blue);
+    font-size: 1rem;
     margin: 0;
-    letter-spacing: 2px;
-    font-weight: 600;
-    font-size: 44px;
   }
 }
 
 .list {
-  display: grid;
-  gap: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .card {
-  border-radius: 12px;
+  border-radius: $radius-md;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .header {
   width: 100%;
   display: grid;
-  grid-template-columns: 40px 1fr 46px;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-
-  padding: 18px 20px;
-  border-radius: 14px;
-
-  background: rgba(0, 0, 0, 0.25);
-  border: 2px solid rgba(217, 179, 112, 0.9);
-
+  gap: 0.65rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(200, 230, 255, 0.45));
+  border: none;
   cursor: pointer;
-
-  /* key: centers the QUESTION column */
-  text-align: center;
-}
-
-.question {
-  justify-self: center; /* puts it dead-center in the 1fr column */
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
-  letter-spacing: 0.6px;
+  text-align: left;
+  font-family: $font-ui;
+  color: $text-on-glass;
 }
 
 .leftIcon {
-  display: grid;
-  place-items: center;
-  opacity: 0.9;
+  font-size: 1.1rem;
 }
 
-.header:hover {
-  background: rgba(255, 255, 255, 0.06);
-  transition: 0.25s ease;
+.question {
+  font-weight: 700;
+  font-size: 0.95rem;
 }
+
 .plus {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(217, 179, 112, 0.9);
-  font-size: 18px;
-  line-height: 1;
-
-  transition: transform 200ms ease;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: transform 0.2s ease;
 }
 
 .plusOpen {
-  transform: rotate(45deg); // turns + into an X-ish; or visually like "close"
+  transform: rotate(45deg);
 }
 
-/* Collapsible body */
 .body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 280ms ease;
+  transition: max-height 0.25s ease;
 }
 
 .bodyOpen {
-  max-height: 200px; // enough for most answers
+  max-height: 240px;
 }
 
 .answer {
-  margin: 12px 10px 0;
-  padding: 18px 16px;
-
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.35);
-
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.95;
-  text-align: center;
+  padding: 0 1rem 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .ctaWrap {
-  margin-top: 42px;
-  display: flex;
-  justify-content: center;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .cta {
-  display: inline-block;
-  padding: 14px 40px;
-  border-radius: 10px;
-
-  border: 2px solid rgba(217, 179, 112, 0.9);
-  background: rgba(0, 0, 0, 0.25);
-
+  display: inline-flex;
+  @include glossy-pill(#6ec4ff, #2a8fd4);
+  padding: 0.55rem 1.5rem;
+  border-radius: $radius-pill;
+  color: #fff;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 600;
-  color: white;
 }

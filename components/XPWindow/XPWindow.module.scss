@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+
+.wrapper {
+  width: 100%;
+}
+
+.window {
+  width: 100%;
+  max-width: 100%;
+}
+
+.body {
+  font-family: $font-ui;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.floating {
+  filter: drop-shadow(4px 8px 16px rgba(0, 40, 80, 0.25));
+}

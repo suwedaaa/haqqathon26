@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.button {
+  @include glossy-pill(#6ec4ff, #2a8fd4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.75rem;
+  border-radius: $radius-pill;
+  color: #fff;
+  font-family: $font-ui;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  white-space: nowrap;
+
+  &:hover {
+    filter: brightness(1.06);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    filter: brightness(0.96);
+  }
+}
+
+.green {
+  @include glossy-pill(#7ef07e, #35b835);
+}
+
+.sm {
+  font-size: 0.85rem;
+  padding: 0.45rem 1.1rem;
+}
