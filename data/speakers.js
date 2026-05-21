@@ -4,7 +4,7 @@ export const speakers = [
   {
     name: "Areeb Siddiqui",
     bio: "Kestrl CEO",
-    image: "/sponsors/areeb-siddiqui.png",
+    image: "/speakers/areeb-siddiqui.png",
   },
   {
     name: "Speaker Name",

@@ -26,7 +26,7 @@
   background: linear-gradient(180deg, lighten($color, 12%) 0%, $color 55%, darken($color, 8%) 100%);
   color: #fff;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: $fs-body;
   border-radius: 6px 6px 0 0;
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);

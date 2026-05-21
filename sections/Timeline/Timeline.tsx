@@ -39,18 +39,18 @@ export default function Timeline() {
         {entries.map((entry) => (
           <li key={`${day}-${entry.time}-${entry.title}`} className={styles.item}>
             <span className={styles.time}>{entry.time}</span>
+            <Image
+              src={assetPath(entry.icon)}
+              alt=""
+              width={48}
+              height={48}
+              className={styles.icon}
+              aria-hidden
+            />
             <div className={styles.details}>
               <h4>{entry.title}</h4>
               <p>{entry.description}</p>
             </div>
-            <Image
-              src={assetPath(entry.icon)}
-              alt=""
-              width={36}
-              height={36}
-              className={styles.icon}
-              aria-hidden
-            />
           </li>
         ))}
       </motion.ul>

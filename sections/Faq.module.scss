@@ -2,23 +2,22 @@
 @import "../styles/mixins";
 
 .faqSection {
-  margin-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0;
 }
 
 .container {
   @include glass-panel(18px, $glass-bg);
   border-radius: $radius-lg;
-  padding: 1.25rem;
+  padding: 1rem;
   color: $text-on-glass;
 }
 
 .titleBox {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 
   h2 {
     @include tab-header($accent-blue);
-    font-size: 1rem;
+    font-size: $fs-body-sm;
     margin: 0;
   }
 }
@@ -26,7 +25,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
 .card {
@@ -41,8 +40,8 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.75rem 1rem;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(200, 230, 255, 0.45));
   border: none;
   cursor: pointer;
@@ -52,16 +51,16 @@
 }
 
 .leftIcon {
-  font-size: 1.1rem;
+  font-size: $fs-body-sm;
 }
 
 .question {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: $fs-small;
 }
 
 .plus {
-  font-size: 1.25rem;
+  font-size: $fs-subtitle;
   font-weight: 700;
   transition: transform 0.2s ease;
 }
@@ -77,26 +76,28 @@
 }
 
 .bodyOpen {
-  max-height: 240px;
+  max-height: 200px;
 }
 
 .answer {
-  padding: 0 1rem 0.85rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  padding: 0 0.75rem 0.65rem;
+  font-size: $fs-small;
+  line-height: 1.45;
+  color: $text-on-glass;
 }
 
 .ctaWrap {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   text-align: center;
 }
 
 .cta {
   display: inline-flex;
   @include glossy-pill(#6ec4ff, #2a8fd4);
-  padding: 0.55rem 1.5rem;
+  padding: 0.45rem 1.25rem;
   border-radius: $radius-pill;
   color: #fff;
   font-weight: 700;
+  font-size: $fs-btn-sm;
   text-decoration: none;
 }

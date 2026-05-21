@@ -2,11 +2,11 @@
 
 .timer {
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
   font-weight: 700;
   text-align: center;
-  margin: 0.5rem 0 0.75rem;
-  letter-spacing: 0.05em;
+  margin: 0.75rem 0 1rem;
+  letter-spacing: 0.08em;
 }
 
 .progress {

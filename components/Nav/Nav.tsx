@@ -13,7 +13,7 @@ export default function Nav() {
   return (
     <nav className={styles.nav} aria-label="Primary">
       <div className={styles.actions}>
-        <GlossyButton href="#sponsors">Sponsors</GlossyButton>
+        <GlossyButton href="#Speakers">Speakers</GlossyButton>
         <GlossyButton href="#faq">FAQ</GlossyButton>
         <GlossyButton href={SIGN_UP_URL} variant="green">
           Sign up

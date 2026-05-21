@@ -14,6 +14,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-ui;
+  font-size: $fs-body;
   color: $text-primary;
   -webkit-font-smoothing: antialiased;
 }
@@ -23,12 +24,14 @@ body {
   overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-p {
+h1 { font-size: $fs-title; }
+h2 { font-size: $fs-title; }
+h3 { font-size: $fs-subtitle; }
+h4 { font-size: $fs-body; }
+
+h1, h2, h3, h4, p {
   margin: 0;
+  color: $text-primary;
 }
 
 a {
@@ -42,4 +45,13 @@ img {
 
 button {
   font-family: inherit;
+  font-size: $fs-small;
+}
+
+.window--shell.window--shell {
+  background: transparent;
+}
+
+.window--shell > .window-body {
+  background: rgba(255, 255, 255, 0.5);
 }

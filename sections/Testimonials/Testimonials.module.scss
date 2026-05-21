@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+
+.carousel {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.text {
+  font-size: $fs-body;
+  font-style: italic;
+  line-height: 1.55;
+  color: $text-on-glass;
+  margin: 0 0 0.5rem;
+}
+
+.attribution {
+  font-size: $fs-body-sm;
+  font-weight: 700;
+  color: $accent-blue-dark;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.counter {
+  font-size: $fs-small;
+  color: $text-on-glass;
+  font-weight: 600;
+}
+
+.arrow {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: linear-gradient(180deg, #7ec8ff, #3d9ae8);
+  color: #fff;
+  font-size: $fs-xs;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(40, 120, 200, 0.35);
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+}

@@ -1,13 +1,9 @@
 @import "../../styles/variables";
 
 .content {
-  display: grid;
-  gap: 1rem;
-
-  @media (min-width: $breakpoint-md) {
-    grid-template-columns: 1fr auto;
-    align-items: start;
-  }
+  position: relative;
+  padding-right: 6rem;
+  min-height: 100px;
 }
 
 .text {
@@ -21,6 +17,9 @@
 }
 
 .globe {
-  justify-self: center;
+  position: absolute;
+  top: -1.5rem;
+  right: -1rem;
   filter: drop-shadow(0 6px 12px rgba(60, 140, 220, 0.35));
+  pointer-events: none;
 }

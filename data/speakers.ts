@@ -1,6 +1,6 @@
 import { PLACEHOLDER_IMAGE } from "@/lib/assets";
 
-export type SponsorProfile = {
+export type SpeakerProfile = {
   id: string;
   name: string;
   role: string;
@@ -9,19 +9,19 @@ export type SponsorProfile = {
   follow?: string;
 };
 
-export const featuredSponsor: SponsorProfile = {
+export const featuredSpeaker: SpeakerProfile = {
   id: "areeb",
   name: "Areeb Siddiqui",
   role: "Kestrl CEO",
-  image: "/sponsors/areeb-siddiqui.png",
+  image: "/speakers/areeb-siddiqui.png",
   contact: "mailto:hello@haqqathon.com",
   follow: "https://instagram.com",
 };
 
-export const sponsorGallery = [
-  featuredSponsor,
+export const SpeakerGallery = [
+  featuredSpeaker,
   {
-    id: "sponsor-2",
+    id: "Speaker-2",
     name: "Partner Name",
     role: "Gold Sponsor",
     image: PLACEHOLDER_IMAGE,

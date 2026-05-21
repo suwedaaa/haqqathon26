@@ -11,7 +11,7 @@
   align-items: center;
   gap: 0.4rem;
   font-family: $font-ui;
-  font-size: 0.95rem;
+  font-size: $fs-body;
   font-weight: 700;
   color: $text-on-glass;
   margin: 0 0 0.75rem;
@@ -52,7 +52,7 @@
   border: 1px solid rgba(255, 255, 255, 0.8);
   background: linear-gradient(180deg, #7ec8ff, #3d9ae8);
   color: #fff;
-  font-size: 0.75rem;
+  font-size: $fs-xs;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(40, 120, 200, 0.35);
 

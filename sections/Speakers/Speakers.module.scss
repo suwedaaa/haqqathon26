@@ -1,0 +1,205 @@
+@import "../../styles/variables";
+
+.section {
+  position: relative;
+}
+
+.bodyWrap {
+  position: relative;
+  min-height: 400px;
+}
+
+.menuBar {
+  display: flex;
+  gap: 0.75rem;
+  font-size: $fs-xs;
+  padding: 0.15rem 0.25rem 0.35rem;
+  border-bottom: 1px solid #aca899;
+  margin-bottom: 0.35rem;
+  color: #000;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0.35rem;
+  min-height: 280px;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.25rem;
+  background: #ece9d8;
+  border: 1px inset #fff;
+}
+
+.tool {
+  width: 28px;
+  height: 28px;
+  background: #ece9d8;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: #aca899;
+  }
+}
+
+.canvas {
+  background: #fff;
+  border: 1px inset #808080;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: cover;
+}
+
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 0.35rem;
+  padding: 0.25rem;
+  background: #ece9d8;
+  border-top: 1px solid #aca899;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #404040;
+}
+
+.statusBar {
+  font-size: $fs-xs;
+  padding: 0.2rem 0.35rem;
+  background: #ece9d8;
+  border-top: 1px solid #aca899;
+  color: #000;
+  margin-top: 0.25rem;
+}
+
+.overlays {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.profileWindow {
+  position: absolute;
+  pointer-events: auto;
+  max-width: min(200px, 45vw);
+  top: 4%;
+  right: 2%;
+  z-index: 15;
+}
+
+.miniStack {
+  position: absolute;
+  pointer-events: auto;
+  left: 2%;
+  bottom: 18%;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  > * {
+    margin-top: -8px;
+    position: relative;
+
+    &:nth-child(1) { z-index: 3; margin-top: 0; }
+    &:nth-child(2) { z-index: 2; }
+    &:nth-child(3) { z-index: 1; }
+  }
+}
+
+.joinWindow {
+  position: absolute;
+  pointer-events: auto;
+  max-width: min(180px, 40vw);
+  bottom: 2%;
+  left: 8%;
+  z-index: 16;
+}
+
+.profileBody {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  background: #c0c0c0;
+  border: 1px inset #808080;
+}
+
+.profileText strong {
+  display: block;
+  font-size: $fs-btn-sm;
+  color: #000;
+}
+
+.profileText span {
+  font-size: $fs-xs;
+  color: #000;
+}
+
+.miniBody {
+  padding: 0.25rem 0;
+  text-align: center;
+}
+
+@media (max-width: $breakpoint-md) {
+  .bodyWrap {
+    min-height: auto;
+  }
+
+  .overlays {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    pointer-events: auto;
+  }
+
+  .profileWindow {
+    position: relative;
+    top: auto;
+    right: auto;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .miniStack {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    align-items: center;
+
+    > * {
+      margin-top: 0.35rem;
+    }
+  }
+
+  .joinWindow {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin: 0 auto;
+  }
+}

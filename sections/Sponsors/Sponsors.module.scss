@@ -1,185 +1,163 @@
 @import "../../styles/variables";
 
 .section {
-  position: relative;
-}
-
-.bodyWrap {
-  position: relative;
-  min-height: 320px;
+  margin-top: 1.25rem;
 }
 
 .menuBar {
   display: flex;
   gap: 0.75rem;
-  font-size: 0.75rem;
+  font-size: $fs-xs;
   padding: 0.15rem 0.25rem 0.35rem;
   border-bottom: 1px solid #aca899;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
   color: #000;
 }
 
-.workspace {
+.body {
   display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 0.35rem;
-  min-height: 220px;
-}
-
-.toolbar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   padding: 0.25rem;
-  background: #ece9d8;
-  border: 1px inset #fff;
-}
 
-.tool {
-  width: 28px;
-  height: 28px;
-  background: #ece9d8;
-  border: 1px solid transparent;
-
-  &:hover {
-    border-color: #aca899;
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
   }
 }
 
-.canvas {
-  background: #fff;
+.leftPanel,
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: $fs-xs;
+  color: #000;
+  font-weight: 400;
+}
+
+.select {
+  font-size: $fs-xs;
+  padding: 0.15rem 0.25rem;
   border: 1px inset #808080;
+  background: #fff;
+  width: 100%;
+}
+
+.schemeButtons {
+  display: flex;
+  gap: 0.35rem;
+
+  button {
+    font-size: $fs-xs;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+.previewBox {
+  border: 2px inset #808080;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  min-height: 200px;
+  padding: 0.75rem;
+  min-height: 160px;
 }
 
-.portrait {
+.previewImage {
   width: 100%;
-  max-width: 280px;
+  max-width: 200px;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
-.palette {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
-  margin-top: 0.35rem;
-  padding: 0.25rem;
-  background: #ece9d8;
-  border-top: 1px solid #aca899;
-}
-
-.swatch {
-  width: 14px;
-  height: 14px;
-  border: 1px solid #404040;
-}
-
-.statusBar {
-  font-size: 0.7rem;
-  padding: 0.2rem 0.35rem;
-  background: #ece9d8;
-  border-top: 1px solid #aca899;
+.selectedName {
+  text-align: center;
+  font-size: $fs-small;
+  font-weight: 600;
   color: #000;
-  margin-top: 0.25rem;
+  border: 1px inset #808080;
+  padding: 0.25rem 0.5rem;
+  background: #fff;
 }
 
-.overlays {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.actionButtons {
+  display: flex;
+  gap: 0.35rem;
+  justify-content: center;
+
+  button {
+    font-size: $fs-xs;
+    padding: 0.25rem 1rem;
+    min-width: 70px;
+  }
 }
 
-.profileWindow,
-.miniWindow,
-.joinWindow {
-  position: absolute;
-  pointer-events: auto;
-  max-width: min(220px, 90vw);
-}
-
-.profileWindow {
-  top: 12%;
-  right: 4%;
-  z-index: 3;
-}
-
-.miniStack {
-  top: 38%;
-  right: 6%;
-  z-index: 4;
+.logoSection {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
 
-.joinWindow {
-  bottom: 4%;
-  left: 8%;
-  z-index: 5;
-}
-
-.profileBody {
-  display: flex;
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
+}
+
+.logoTile {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px solid #808080;
+  background: #fff;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
   align-items: center;
-}
+  justify-content: center;
+  transition: border-color 0.15s ease;
 
-.avatar {
-  width: 32px;
-  height: 32px;
-  background: #c0c0c0;
-  border: 1px inset #808080;
-}
-
-.profileText strong {
-  display: block;
-  font-size: 0.85rem;
-}
-
-.profileText span {
-  font-size: 0.75rem;
-}
-
-.miniBody {
-  padding: 0.25rem 0;
-  text-align: center;
-}
-
-@media (max-width: $breakpoint-md) {
-  .profileWindow {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 1rem auto 0;
+  &:hover {
+    border-color: $accent-blue;
   }
+}
 
-  .miniStack {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 0.75rem auto;
-    align-items: center;
-  }
+.logoTileActive {
+  border-color: $accent-blue;
+  outline: 2px solid $accent-blue;
+  outline-offset: 1px;
+}
 
-  .joinWindow {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin: 0.75rem auto 0;
-  }
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-  .overlays {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    pointer-events: auto;
-  }
+.customSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.customGrid {
+  display: flex;
+  gap: 3px;
+}
+
+.customSlot {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #808080;
+  background: #fff;
+}
+
+.defineBtn {
+  font-size: $fs-xs;
+  padding: 0.25rem 0.75rem;
+  align-self: flex-end;
+  margin-top: 0.25rem;
 }

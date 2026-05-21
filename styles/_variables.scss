@@ -24,17 +24,27 @@ $shell-border: rgba(255, 255, 255, 0.65);
 $font-ui: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 $font-display: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
+// Typography scale
+$fs-title: 1.25rem;
+$fs-subtitle: 1.05rem;
+$fs-body: 0.95rem;
+$fs-body-sm: 0.88rem;
+$fs-small: 0.8rem;
+$fs-xs: 0.75rem;
+$fs-btn: 1rem;
+$fs-btn-sm: 0.85rem;
+
 $radius-lg: 20px;
 $radius-md: 12px;
 $radius-pill: 999px;
 
 $z-background: 0;
-$z-bubbles: 1;
-$z-overlay-mid: 2;
+$z-bubbles: 2;
+$z-overlay-mid: 1;
 $z-content: 3;
 $z-overlay-top: 4;
 
-$placeholder-image: "/speakers/sponsor-areeb-siddiqui.png";
+$placeholder-image: "/speakers/areeb-siddiqui.png";
 
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;

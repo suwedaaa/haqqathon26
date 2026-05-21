@@ -2,44 +2,19 @@
 @import "../../styles/mixins";
 
 .shell {
-  @include glass-panel(20px, $shell-bg);
-  border-radius: $radius-lg;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.windowBody {
   padding: 0.75rem 1rem 1.5rem;
-  border: 2px solid $shell-border;
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-.titleBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.35rem 0.5rem 0.75rem;
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.title {
-  font-family: $font-ui;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: $text-primary;
-  opacity: 0.7;
-}
-
-.controls {
-  display: flex;
-  gap: 0.35rem;
-}
-
-.control {
-  width: 14px;
-  height: 14px;
-  border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: linear-gradient(180deg, #f5f5f5, #d4d4d4);
-  cursor: default;
-}
-
-.grid {
+.grid,
+.grid2 {
   display: grid;
   gap: 1.25rem;
 
@@ -47,6 +22,10 @@
     grid-template-columns: 1fr 1fr;
     align-items: start;
   }
+}
+
+.grid2 {
+  margin-top: 1.25rem;
 }
 
 .left,

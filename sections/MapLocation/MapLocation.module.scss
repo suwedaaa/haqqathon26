@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.mapWrap {
+  border-radius: $radius-md;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(80, 140, 200, 0.2);
+}
+
+.map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.venue {
+  margin-top: 0.75rem;
+  font-size: $fs-body-sm;
+  font-style: italic;
+  color: $text-on-glass;
+  line-height: 1.4;
+}
