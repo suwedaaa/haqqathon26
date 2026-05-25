@@ -1,19 +1,28 @@
 @import "../../styles/variables";
 
+.date {
+  text-align: center;
+  font-size: $fs-body-sm;
+  font-weight: 600;
+  color: #444;
+  margin: 0.5rem 0 0.25rem;
+  letter-spacing: 0.02em;
+}
+
 .timer {
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 700;
   text-align: center;
-  margin: 0.75rem 0 1rem;
+  margin: 0.75rem 0 1.25rem;
   letter-spacing: 0.08em;
 }
 
 .progress {
-  height: 18px;
+  height: 20px;
   border: 1px inset #c0c0c0;
   background: #fff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   padding: 2px;
 }
 
@@ -34,4 +43,5 @@
   justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
+  padding-bottom: 0.5rem;
 }

@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import XPWindow from "@/components/XPWindow/XPWindow";
+import MenuLabel from "@/components/MenuLabel";
+import { useErrorOverlay } from "@/components/ErrorOverlay/ErrorOverlayContext";
 import { HAQQATHON_START, SIGN_UP_URL } from "@/data/event";
 import styles from "./Countdown.module.scss";
 
@@ -26,9 +28,11 @@ function getTimeLeft(target: Date): TimeLeft {
 }
 
 const TOTAL_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
+const PANIC_HINT = "https://edition.cnn.com/2026/05/20/health/surgeon-general-advisory-screen-time-wellness";
 
 export default function Countdown() {
   const [left, setLeft] = useState<TimeLeft>(() => getTimeLeft(HAQQATHON_START));
+  const { triggerPanic } = useErrorOverlay();
 
   useEffect(() => {
     const id = setInterval(() => setLeft(getTimeLeft(HAQQATHON_START)), 1000);
@@ -37,7 +41,7 @@ export default function Countdown() {
 
   const label = useMemo(
     () =>
-      `${left.days}d ${left.hours}h ${left.minutes}m ${left.seconds}s`,
+      `${left.days}d  ${left.hours}h  ${left.minutes}m  ${left.seconds}s`,
     [left]
   );
 
@@ -48,14 +52,17 @@ export default function Countdown() {
 
   return (
     <XPWindow title="how long until the haqqathon?" floating>
+      <p className={styles.date}>20th &ndash; 21st June 2026</p>
       <p className={styles.timer}>{label}</p>
       <div className={styles.progress} role="progressbar" aria-valuenow={progress}>
         <div className={styles.progressFill} style={{ width: `${progress}%` }} />
       </div>
       <div className={styles.actions}>
-        <button type="button">Panic</button>
+        <button type="button" onClick={() => triggerPanic(PANIC_HINT)}>
+          <MenuLabel text="Panic" />
+        </button>
         <button type="button" onClick={() => window.location.assign(SIGN_UP_URL)}>
-          Sign up
+          <MenuLabel text="Sign up" />
         </button>
       </div>
     </XPWindow>

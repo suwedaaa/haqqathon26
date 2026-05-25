@@ -5,12 +5,14 @@ import styles from "./XPWindow.module.scss";
 
 type XPWindowProps = {
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   floating?: boolean;
   animate?: boolean;
   style?: React.CSSProperties;
   showControls?: boolean;
+  closeOnly?: boolean;
+  titleBarOnly?: boolean;
 };
 
 function WindowChrome({
@@ -20,6 +22,8 @@ function WindowChrome({
   floating = false,
   style,
   showControls = true,
+  closeOnly = false,
+  titleBarOnly = false,
 }: XPWindowProps) {
   return (
     <div
@@ -30,13 +34,15 @@ function WindowChrome({
         <div className="title-bar-text">{title}</div>
         {showControls ? (
           <div className="title-bar-controls">
-            <button type="button" aria-label="Minimize" />
-            <button type="button" aria-label="Maximize" />
+            {!closeOnly && <button type="button" aria-label="Minimize" />}
+            {!closeOnly && <button type="button" aria-label="Maximize" />}
             <button type="button" aria-label="Close" />
           </div>
         ) : null}
       </div>
-      <div className={`window-body ${styles.body}`}>{children}</div>
+      {!titleBarOnly && (
+        <div className={`window-body ${styles.body}`}>{children}</div>
+      )}
     </div>
   );
 }

@@ -9,14 +9,22 @@
   @include glass-panel(18px, $glass-bg);
   border-radius: $radius-lg;
   padding: 1rem;
+  padding-top: 1.5rem;
   color: $text-on-glass;
+  position: relative;
+  overflow: visible;
+  margin-top: 1.25rem;
 }
 
 .titleBox {
-  margin-bottom: 0.75rem;
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  transform: translateY(-100%);
+  z-index: 2;
 
   h2 {
-    @include tab-header($accent-blue);
+    @include tab-header-right($accent-blue);
     font-size: $fs-body-sm;
     margin: 0;
   }

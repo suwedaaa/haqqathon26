@@ -5,23 +5,35 @@
   @include glass-panel(18px, $glass-bg);
   border-radius: $radius-lg;
   padding: 1.25rem 1.25rem 1.5rem;
+  padding-top: 1.75rem;
   color: $text-on-glass;
   position: relative;
   overflow: visible;
+  margin-top: 1.25rem;
 }
 
 .headerRow {
+  position: absolute;
+  top: 0;
+  left: 0.5rem;
+  transform: translateY(-100%);
   display: flex;
   align-items: flex-end;
-  margin: -1.25rem -1.25rem 1rem;
-  padding: 0 0 0 0.5rem;
+  z-index: 2;
+}
+
+.headerRight {
+  left: auto;
+  right: 0.5rem;
 }
 
 .tab {
   @include tab-header($accent-blue);
-  margin-bottom: -1px;
   position: relative;
-  z-index: 1;
+}
+
+.tabRight {
+  @include tab-header-right($accent-blue);
 }
 
 .tabIcon {

@@ -15,7 +15,7 @@ export const featuredSpeaker: SpeakerProfile = {
   role: "Kestrl CEO",
   image: "/speakers/areeb-siddiqui.png",
   contact: "mailto:hello@haqqathon.com",
-  follow: "https://instagram.com",
+  follow: "https://www.linkedin.com/in/areeb-siddiqui-01b06144/",
 };
 
 export const SpeakerGallery = [

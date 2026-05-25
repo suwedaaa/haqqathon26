@@ -16,7 +16,7 @@ export default function Testimonials() {
     setIndex((i) => (i + 1) % testimonials.length);
 
   return (
-    <GlassPanel title="Testimonials" iconSrc="/blue-star.png" iconAlt="">
+    <GlassPanel title="Testimonials" iconSrc="/blue-star.png" iconAlt="" tabAlign="right">
       <div className={styles.carousel}>
         <AnimatePresence mode="wait">
           <motion.blockquote

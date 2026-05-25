@@ -2,12 +2,17 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .bubble {
   position: absolute;
-  bottom: -100px;
+  top: 0;
+  left: 0;
   border-radius: 50%;
+  will-change: transform, opacity;
+  transition: opacity 0.15s ease;
+  overflow: hidden;
   background: radial-gradient(
     circle at 50% 50%,
     rgba(255, 255, 255, 0.03) 0%,
@@ -20,9 +25,6 @@
   box-shadow:
     inset 0 0 20px rgba(255, 255, 255, 0.08),
     0 0 6px rgba(200, 230, 255, 0.15);
-  will-change: transform;
-  animation: bubbleFloat linear infinite;
-  overflow: hidden;
 }
 
 .bubble::before {
@@ -73,22 +75,21 @@
   transform: rotate(-25deg);
 }
 
-:global {
-  @keyframes bubbleFloat {
-    0% {
-      transform: translateY(0) translateX(0);
-    }
-    25% {
-      transform: translateY(-30vh) translateX(20px);
-    }
-    50% {
-      transform: translateY(-60vh) translateX(-15px);
-    }
-    75% {
-      transform: translateY(-90vh) translateX(12px);
-    }
-    100% {
-      transform: translateY(-120vh) translateX(-8px);
-    }
+.popping {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(200, 230, 255, 0.3) 40%,
+    transparent 70%
+  );
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 40px rgba(180, 220, 255, 0.3);
+  filter: blur(2px);
+
+  &::before,
+  &::after {
+    display: none;
   }
 }

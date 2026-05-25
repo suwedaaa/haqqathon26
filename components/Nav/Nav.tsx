@@ -4,9 +4,9 @@ import { SIGN_UP_URL } from "@/data/event";
 import styles from "./Nav.module.scss";
 
 const socialLinks = [
-  { href: "https://instagram.com", icon: "/instagram-logo.svg", label: "Instagram" },
-  { href: "https://youtube.com", icon: "/blue-youtube.png", label: "YouTube" },
-  { href: "https://linktr.ee", icon: "/linktree-logo.svg", label: "Linktree" },
+  { href: "https://www.instagram.com/stem.muslims/", icon: "/instagram-logo.svg", label: "Instagram" },
+  { href: "https://www.youtube.com/@STEMMuslims", icon: "/youtube-logo-pt1.svg", label: "YouTube" },
+  { href: "https://linktr.ee/stemmuslims", icon: "/linktree-logo.svg", label: "Linktree" },
 ];
 
 export default function Nav() {

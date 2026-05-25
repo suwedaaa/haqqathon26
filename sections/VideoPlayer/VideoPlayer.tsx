@@ -22,7 +22,9 @@ export default function VideoPlayer() {
           <MenuLabel text="View" />
           <MenuLabel text="Play" />
           <MenuLabel text="Tools" />
-          <MenuLabel text="Help" />
+          <span style={{ cursor: "pointer" }} onClick={() => window.dispatchEvent(new CustomEvent("help-clicked"))}>
+            <MenuLabel text="Help" />
+          </span>
         </div>
         <div className={styles.videoContainer}>
           <iframe

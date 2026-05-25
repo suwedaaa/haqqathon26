@@ -1,0 +1,80 @@
+@import "../../styles/variables";
+
+.errorOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 80, 0.15);
+  pointer-events: auto;
+}
+
+.errorWindow {
+  position: absolute;
+  width: clamp(200px, 25vw, 320px);
+  animation: errorPop 0.15s ease-out;
+}
+
+.errorBody {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+
+  p {
+    margin: 0;
+    font-size: $fs-body-sm;
+    color: #000;
+  }
+}
+
+.errorIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.hintWindow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(260px, 30vw, 380px);
+  z-index: 100000;
+  animation: errorPop 0.25s ease-out;
+}
+
+.hintBody {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+
+  p {
+    margin: 0;
+    font-size: $fs-body;
+    font-weight: 600;
+    color: #000;
+  }
+}
+
+.hintActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 0.35rem;
+
+  button {
+    min-width: 80px;
+  }
+}
+
+@keyframes errorPop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

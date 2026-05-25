@@ -7,6 +7,7 @@ type GlassPanelProps = {
   iconAlt?: string;
   children: React.ReactNode;
   className?: string;
+  tabAlign?: "left" | "right";
 };
 
 export default function GlassPanel({
@@ -15,11 +16,14 @@ export default function GlassPanel({
   iconAlt = "",
   children,
   className = "",
+  tabAlign = "left",
 }: GlassPanelProps) {
+  const isRight = tabAlign === "right";
+
   return (
     <section className={`${styles.panel} ${className}`.trim()}>
-      <div className={styles.headerRow}>
-        <div className={styles.tab}>
+      <div className={`${styles.headerRow} ${isRight ? styles.headerRight : ""}`}>
+        <div className={`${styles.tab} ${isRight ? styles.tabRight : ""}`}>
           {iconSrc ? (
             <Image
               src={iconSrc}

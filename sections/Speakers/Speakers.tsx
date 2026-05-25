@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import XPWindow from "@/components/XPWindow/XPWindow";
 import MenuLabel from "@/components/MenuLabel";
 import { featuredSpeaker } from "@/data/speakers";
+import { SIGN_UP_URL } from "@/data/event";
 import { assetPath } from "@/lib/assets";
 import styles from "./Speakers.module.scss";
 
@@ -15,6 +16,12 @@ const PALETTE = [
 ];
 
 const floatTransition = { duration: 4, repeat: Infinity, repeatType: "reverse" as const };
+
+const MINI_WINDOWS = [
+  { label: "Follow", href: featuredSpeaker.follow },
+  { label: "Contact", href: featuredSpeaker.contact },
+  { label: "Get Involved", href: SIGN_UP_URL },
+];
 
 export default function Speakers() {
   const image = assetPath(featuredSpeaker.image);
@@ -27,7 +34,9 @@ export default function Speakers() {
           <MenuLabel text="File" />
           <MenuLabel text="Edit" />
           <MenuLabel text="View" />
-          <MenuLabel text="Help" />
+          <span style={{ cursor: "pointer" }} onClick={() => window.dispatchEvent(new CustomEvent("help-clicked"))}>
+            <MenuLabel text="Help" />
+          </span>
         </div>
 
         <div className={styles.workspace}>
@@ -57,12 +66,13 @@ export default function Speakers() {
         </p>
 
         <div className={styles.overlays}>
+          {/* Profile card — top right */}
           <motion.div
             className={styles.profileWindow}
             animate={{ y: [0, -6, 0] }}
             transition={floatTransition}
           >
-            <XPWindow title={featuredSpeaker.name} floating animate={false}>
+            <XPWindow title={featuredSpeaker.name} floating animate={false} closeOnly>
               <div className={styles.profileBody}>
                 <span className={styles.avatar} aria-hidden />
                 <div className={styles.profileText}>
@@ -73,28 +83,40 @@ export default function Speakers() {
             </XPWindow>
           </motion.div>
 
+          {/* Follow / Contact / Get Involved — right side, stacked */}
           <motion.div
             className={styles.miniStack}
             animate={{ y: [0, 5, 0] }}
             transition={{ ...floatTransition, delay: 0.5 }}
           >
-            {["Contact", "Follow", "Get Involved"].map((label) => (
-              <XPWindow key={label} title={label} floating animate={false}>
+            {MINI_WINDOWS.map(({ label, href }) => (
+              <XPWindow key={label} title={label} floating animate={false} closeOnly>
                 <div className={styles.miniBody}>
-                  <button type="button">{label}</button>
+                  <button
+                    type="button"
+                    onClick={() => href && window.open(href, "_blank")}
+                  >
+                    <MenuLabel text={label} />
+                  </button>
                 </div>
               </XPWindow>
             ))}
           </motion.div>
 
+          {/* Join us! — bottom left */}
           <motion.div
             className={styles.joinWindow}
             animate={{ y: [0, -4, 0] }}
             transition={{ ...floatTransition, delay: 1 }}
           >
-            <XPWindow title="Join us!" floating animate={false}>
+            <XPWindow title="Join us!" floating animate={false} closeOnly>
               <div className={styles.miniBody}>
-                <button type="button">Join us!</button>
+                <button
+                  type="button"
+                  onClick={() => window.open(SIGN_UP_URL, "_blank")}
+                >
+                  <MenuLabel text="Join us!" />
+                </button>
               </div>
             </XPWindow>
           </motion.div>

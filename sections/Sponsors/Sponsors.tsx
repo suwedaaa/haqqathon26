@@ -12,13 +12,15 @@ export default function Sponsors() {
 
   return (
     <section id="sponsors" className={styles.section}>
-      <XPWindow title="Our Sponsors" animate={false}>
+      <XPWindow title="Our Partners" animate={false}>
         <div className={styles.menuBar}>
           <MenuLabel text="File" />
           <MenuLabel text="Options" />
           <MenuLabel text="Depth of effects" />
           <MenuLabel text="Utilities" />
-          <MenuLabel text="Help" />
+          <span style={{ cursor: "pointer" }} onClick={() => window.dispatchEvent(new CustomEvent("help-clicked"))}>
+            <MenuLabel text="Help" />
+          </span>
         </div>
 
         <div className={styles.body}>
@@ -28,8 +30,8 @@ export default function Sponsors() {
               <option value="bright-blue">Bright Blue</option>
             </select>
             <div className={styles.schemeButtons}>
-              <button type="button">Add Scheme</button>
-              <button type="button">Remove Scheme</button>
+              <button type="button"><MenuLabel text="Add Scheme" /></button>
+              <button type="button"><MenuLabel text="Remove Scheme" /></button>
             </div>
 
             <div className={styles.previewBox}>
@@ -47,8 +49,18 @@ export default function Sponsors() {
             </div>
 
             <div className={styles.actionButtons}>
-              <button type="button">Save</button>
-              <button type="button">Restore</button>
+              <button
+                type="button"
+                onClick={() => sponsorLogos[selected].website && window.open(sponsorLogos[selected].website, "_blank")}
+              >
+                <MenuLabel text="Website" />
+              </button>
+              <button
+                type="button"
+                onClick={() => sponsorLogos[selected].linkedin && window.open(sponsorLogos[selected].linkedin, "_blank")}
+              >
+                <MenuLabel text="LinkedIn" />
+              </button>
             </div>
           </div>
 
@@ -88,7 +100,7 @@ export default function Sponsors() {
                 ))}
               </div>
               <button type="button" className={styles.defineBtn}>
-                Define Custom Colors
+                <MenuLabel text="Define Custom Colors" />
               </button>
             </div>
           </div>

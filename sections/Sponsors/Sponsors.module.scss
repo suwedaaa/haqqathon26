@@ -62,15 +62,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
-  min-height: 160px;
+  padding: 0;
+  width: 75%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .previewImage {
   width: 100%;
-  max-width: 200px;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 .selectedName {
@@ -113,10 +115,11 @@
   border: 2px solid #808080;
   background: #fff;
   cursor: pointer;
-  padding: 0.25rem;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   transition: border-color 0.15s ease;
 
   &:hover {
@@ -133,7 +136,7 @@
 .logoImg {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .customSection {

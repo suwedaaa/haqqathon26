@@ -19,6 +19,7 @@ export default function Timeline() {
       iconSrc="/timeline-registration.png"
       iconAlt=""
       className={styles.panel}
+      tabAlign="right"
     >
       <Image
         src="/dolphin.png"
