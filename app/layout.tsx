@@ -4,7 +4,7 @@ import "../styles/xp-compat.css";
 import "./globals.scss";
 
 export const metadata: Metadata = {
-  title: "Haqqathon 2026",
+  title: "STEMM Haqqathon",
   description:
     "The largest Muslim student-led hackathon in the world, empowering the next generation of innovators to build impactful solutions.",
 };

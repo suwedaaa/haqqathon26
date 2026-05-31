@@ -4,14 +4,14 @@
   text-align: center;
   font-size: $fs-body-sm;
   font-weight: 600;
-  color: #444;
+  color: $text-muted;
   margin: 0.5rem 0 0.25rem;
   letter-spacing: 0.02em;
 }
 
 .timer {
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-size: $fs-countdown;
   font-weight: 700;
   text-align: center;
   margin: 0.75rem 0 1.25rem;

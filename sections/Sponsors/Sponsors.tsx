@@ -25,10 +25,10 @@ export default function Sponsors() {
 
         <div className={styles.body}>
           <div className={styles.leftPanel}>
-            <label className={styles.label}>Color Scheme List:</label>
-            <select className={styles.select} defaultValue="bright-blue">
-              <option value="bright-blue">Bright Blue</option>
-            </select>
+            <div className={styles.field}>
+              <span className={styles.label}>Color Scheme List:</span>
+              <div className={styles.staticField}>Bright Blue</div>
+            </div>
             <div className={styles.schemeButtons}>
               <button type="button"><MenuLabel text="Add Scheme" /></button>
               <button type="button"><MenuLabel text="Remove Scheme" /></button>
@@ -65,10 +65,10 @@ export default function Sponsors() {
           </div>
 
           <div className={styles.rightPanel}>
-            <label className={styles.label}>Screen Element:</label>
-            <select className={styles.select} defaultValue="desktop">
-              <option value="desktop">Desktop</option>
-            </select>
+            <div className={styles.field}>
+              <span className={styles.label}>Screen Element:</span>
+              <div className={styles.staticField}>Desktop</div>
+            </div>
 
             <div className={styles.logoSection}>
               <label className={styles.label}>Basic Colors:</label>

@@ -9,6 +9,47 @@ import { timelineDay1, timelineDay2 } from "@/data/timeline";
 import { assetPath } from "@/lib/assets";
 import styles from "./Timeline.module.scss";
 
+type ParsedTime =
+  | { kind: "single"; label: string }
+  | { kind: "range"; start: string; end: string }
+  | { kind: "from"; start: string; note: string };
+
+function parseTime(time: string): ParsedTime {
+  const rangeMatch = time.match(/^(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})$/);
+  if (rangeMatch) {
+    return { kind: "range", start: rangeMatch[1], end: rangeMatch[2] };
+  }
+
+  const fromMatch = time.match(/^(\d{1,2}:\d{2})\s+(.+)$/i);
+  if (fromMatch) {
+    return { kind: "from", start: fromMatch[1], note: fromMatch[2] };
+  }
+
+  return { kind: "single", label: time };
+}
+
+function TimelineTime({ time }: { time: string }) {
+  const parsed = parseTime(time);
+
+  if (parsed.kind === "range") {
+    return (
+      <span className={styles.time}>
+        {parsed.start}–{parsed.end}
+      </span>
+    );
+  }
+
+  if (parsed.kind === "from") {
+    return (
+      <span className={styles.time}>
+        {parsed.start} {parsed.note}
+      </span>
+    );
+  }
+
+  return <span className={styles.time}>{parsed.label}</span>;
+}
+
 export default function Timeline() {
   const [day, setDay] = useState<1 | 2>(1);
   const entries = day === 1 ? timelineDay1 : timelineDay2;
@@ -39,18 +80,24 @@ export default function Timeline() {
       >
         {entries.map((entry) => (
           <li key={`${day}-${entry.time}-${entry.title}`} className={styles.item}>
-            <span className={styles.time}>{entry.time}</span>
-            <Image
-              src={assetPath(entry.icon)}
-              alt=""
-              width={48}
-              height={48}
-              className={styles.icon}
-              aria-hidden
-            />
-            <div className={styles.details}>
-              <h4>{entry.title}</h4>
-              <p>{entry.description}</p>
+            <div className={styles.col}>
+              <TimelineTime time={entry.time} />
+            </div>
+            <div className={`${styles.col} ${styles.colIcon}`}>
+              <Image
+                src={assetPath(entry.icon)}
+                alt=""
+                width={52}
+                height={52}
+                className={styles.icon}
+                aria-hidden
+              />
+            </div>
+            <div className={`${styles.col} ${styles.colDetails}`}>
+              <div className={styles.details}>
+                <h4>{entry.title}</h4>
+                <p>{entry.description}</p>
+              </div>
             </div>
           </li>
         ))}

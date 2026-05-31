@@ -1,14 +1,22 @@
 @import "../../styles/variables";
 
+.panel {
+  overflow: visible;
+  padding-bottom: 0.65rem;
+}
+
 .content {
-  position: relative;
-  padding-right: 6rem;
-  min-height: 100px;
+  overflow: visible;
+  padding-top: 0.15rem;
 }
 
 .text {
-  margin: 0;
+  margin: 0 0 1rem;
   color: $text-on-glass;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .highlight {
@@ -17,9 +25,10 @@
 }
 
 .globe {
-  position: absolute;
-  top: -1.5rem;
-  right: -1rem;
-  filter: drop-shadow(0 6px 12px rgba(60, 140, 220, 0.35));
+  float: right;
+  width: clamp(5rem, 28%, 7.5rem);
+  height: auto;
+  margin: 0 0 0.5rem 1rem;
   pointer-events: none;
+  shape-outside: circle(45%);
 }

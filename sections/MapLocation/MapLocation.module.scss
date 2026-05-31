@@ -5,6 +5,15 @@
   overflow: hidden;
   border: 3px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 4px 12px rgba(80, 140, 200, 0.2);
+
+  a {
+    display: block;
+    line-height: 0;
+
+    &:hover .map {
+      filter: brightness(1.03);
+    }
+  }
 }
 
 .map {

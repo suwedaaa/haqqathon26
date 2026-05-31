@@ -31,10 +31,6 @@ export default function Faq() {
                   onClick={() => toggle(index)}
                   aria-expanded={isOpen}
                 >
-                  <span className={styles.leftIcon} aria-hidden="true">
-                    ⚖
-                  </span>
-
                   <span className={styles.question}>{item.question}</span>
 
                   <span
@@ -57,7 +53,12 @@ export default function Faq() {
         </div>
 
         <div className={styles.ctaWrap}>
-          <a className={styles.cta} href="#contact">
+          <a
+            className={styles.cta}
+            href="https://www.instagram.com/stem.muslims/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Contact us
           </a>
         </div>

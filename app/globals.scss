@@ -1,5 +1,45 @@
 @import "../styles/variables";
 
+:root {
+  // Text colors
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-on-glass: #{$text-on-glass};
+  --text-white: #{$text-white};
+  --text-black: #{$text-black};
+  --text-muted: #{$text-muted};
+  --text-disabled: #{$text-disabled};
+
+  // Accent colors
+  --accent-blue: #{$accent-blue};
+  --accent-blue-dark: #{$accent-blue-dark};
+  --accent-primary: #{$accent-primary};
+  --accent-green: #{$accent-green};
+  --accent-green-dark: #{$accent-green-dark};
+
+  // Typography
+  --fs-title: #{$fs-title};
+  --fs-subtitle: #{$fs-subtitle};
+  --fs-body: #{$fs-body};
+  --fs-body-sm: #{$fs-body-sm};
+  --fs-small: #{$fs-small};
+  --fs-xs: #{$fs-xs};
+  --fs-btn: #{$fs-btn};
+  --fs-btn-sm: #{$fs-btn-sm};
+  --fs-btn-lg: #{$fs-btn-lg};
+  --fs-btn-nav-sm: #{$fs-btn-nav-sm};
+  --fs-btn-nav-md: #{$fs-btn-nav-md};
+  --fs-btn-nav-lg: #{$fs-btn-nav-lg};
+  --fs-display: #{$fs-display};
+  --fs-countdown: #{$fs-countdown};
+  --fs-icon-lg: #{$fs-icon-lg};
+
+  // UI
+  --btn-text: #{$btn-text};
+  --shell-body-bg: #{$shell-body-bg};
+  --fs-taskbar: #{$fs-taskbar};
+}
+
 * {
   box-sizing: border-box;
 }
@@ -14,8 +54,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-ui;
-  font-size: $fs-body;
-  color: $text-primary;
+  font-size: var(--fs-body);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -24,14 +64,14 @@ body {
   overflow-x: hidden;
 }
 
-h1 { font-size: $fs-title; }
-h2 { font-size: $fs-title; }
-h3 { font-size: $fs-subtitle; }
-h4 { font-size: $fs-body; }
+h1 { font-size: var(--fs-title); }
+h2 { font-size: var(--fs-title); }
+h3 { font-size: var(--fs-subtitle); }
+h4 { font-size: var(--fs-body); }
 
 h1, h2, h3, h4, p {
   margin: 0;
-  color: $text-primary;
+  color: var(--text-primary);
 }
 
 a {
@@ -45,7 +85,7 @@ img {
 
 button {
   font-family: inherit;
-  font-size: $fs-small;
+  font-size: var(--fs-small);
 }
 
 .window--shell.window--shell {
@@ -53,5 +93,5 @@ button {
 }
 
 .window--shell > .window-body {
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--shell-body-bg);
 }

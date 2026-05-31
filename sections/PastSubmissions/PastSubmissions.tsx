@@ -42,14 +42,18 @@ export default function PastSubmissions() {
         transition={{ duration: 0.3 }}
       >
         {visible.map((item) => (
-          <Image
-            key={item.id}
-            src={assetPath(item.src)}
-            alt={item.alt}
-            width={280}
-            height={210}
-            className={styles.photo}
-          />
+          <figure key={item.id} className={styles.card}>
+            <div className={styles.photoFrame}>
+              <Image
+                src={assetPath(item.src)}
+                alt={item.name}
+                fill
+                sizes="(max-width: 768px) 45vw, 280px"
+                className={styles.photo}
+              />
+            </div>
+            <figcaption className={styles.name}>{item.name}</figcaption>
+          </figure>
         ))}
       </motion.div>
 
@@ -65,8 +69,8 @@ export default function PastSubmissions() {
       <Image
         src="/pastsubmissions-computer.png"
         alt=""
-        width={64}
-        height={64}
+        width={140}
+        height={140}
         className={styles.monitor}
         aria-hidden
       />

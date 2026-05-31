@@ -16,7 +16,7 @@
   padding: 0.15rem 0.25rem 0.35rem;
   border-bottom: 1px solid #aca899;
   margin-bottom: 0.35rem;
-  color: #000;
+  color: $text-black;
 }
 
 .workspace {
@@ -42,7 +42,7 @@
   border: 1px solid transparent;
 
   &:hover {
-    border-color: #aca899;
+    border-color: $border-xp-muted;
   }
 }
 
@@ -84,7 +84,7 @@
   padding: 0.2rem 0.35rem;
   background: #ece9d8;
   border-top: 1px solid #aca899;
-  color: #000;
+  color: $text-black;
   margin-top: 0.25rem;
 }
 
@@ -122,12 +122,12 @@
 .profileText strong {
   display: block;
   font-size: $fs-btn-sm;
-  color: #000;
+  color: $text-black;
 }
 
 .profileText span {
   font-size: $fs-xs;
-  color: #000;
+  color: $text-black;
 }
 
 .miniBody {

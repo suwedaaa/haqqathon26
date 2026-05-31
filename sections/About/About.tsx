@@ -5,16 +5,8 @@ import styles from "./About.module.scss";
 
 export default function About() {
   return (
-    <GlassPanel title="About" iconSrc="/globe.png" iconAlt="">
+    <GlassPanel title="About" iconSrc="/globe.png" iconAlt="" className={styles.panel}>
       <div className={styles.content}>
-        <p className={styles.text}>
-          Haqqathon is a unique hackathon that brings together Muslim students,
-          developers, designers and entrepreneurs to create innovative solutions
-          that benefit our communities and beyond.{" "}
-          <span className={styles.highlight}>&ldquo;Haqq&rdquo;</span> means truth
-          in Arabic and we&rsquo;re on a mission to build technology that serves
-          the truth.
-        </p>
         <Image
           src="/globe.png"
           alt=""
@@ -23,6 +15,16 @@ export default function About() {
           className={styles.globe}
           aria-hidden
         />
+        <p className={styles.text}>
+          The STEM Muslims Haqqathon is a unique hackathon that brings together Muslim students,
+          developers, designers and entrepreneurs to create innovative solutions
+          that benefit our communities and beyond.
+        </p>
+        <p className={styles.text}>
+          Participants work in teams to address real-world challenges, supported by mentorship
+          and workshops, grounded in the belief that every skill is an amanah (a trust) with
+          significance in both this life and the next.
+        </p>
       </div>
       <PastSubmissions />
     </GlassPanel>

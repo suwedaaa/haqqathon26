@@ -8,23 +8,81 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-@mixin glossy-pill($from: #5eb8ff, $to: #2a8fd4) {
-  background: linear-gradient(180deg, lighten($from, 8%) 0%, $from 45%, $to 100%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow:
-    0 4px 14px rgba(30, 120, 200, 0.45),
-    inset 0 2px 0 rgba(255, 255, 255, 0.65),
-    inset 0 -3px 6px rgba(0, 60, 120, 0.2);
-  text-shadow: 0 1px 1px rgba(0, 50, 100, 0.35);
+@mixin glossy-surface {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
-@mixin tab-header($color: #3d9ae8) {
+@mixin glossy-pill($from: #5eb8ff, $to: #1568b0) {
+  @include glossy-surface;
+
+  background: linear-gradient(
+    180deg,
+    lighten($from, 10%) 0%,
+    $from 28%,
+    darken($from, 6%) 52%,
+    $to 100%
+  );
+  border: 1px solid darken($to, 1%);
+  box-shadow:
+    0 5px 16px rgba(20, 90, 170, 0.55),
+    inset 0 -4px 8px rgba(0, 50, 110, 0.35);
+  text-shadow: 0 1px 2px rgba(0, 40, 90, 0.55);
+
+  &::before {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.55) 28%,
+      rgba(255, 255, 255, 0.08) 58%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(180deg, #000 0%, #000 52%, transparent 100%);
+  }
+}
+
+@mixin glossy-circle($from: #5eb8ff, $to: #1568b0) {
+  @include glossy-surface;
+
+  background: linear-gradient(
+    180deg,
+    lighten($from, 10%) 0%,
+    $from 30%,
+    darken($from, 8%) 58%,
+    $to 100%
+  );
+  border: 1px solid darken($to, 6%);
+  box-shadow:
+    0 5px 16px rgba(20, 90, 170, 0.55),
+    inset 0 -4px 8px rgba(0, 50, 110, 0.35);
+
+  &::before {
+    background: radial-gradient(
+      ellipse 85% 70% at 50% 12%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.45) 42%,
+      rgba(255, 255, 255, 0) 72%
+    );
+  }
+}
+
+@mixin tab-header($color: $accent-blue) {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 1.25rem 0.35rem 0.85rem;
   background: linear-gradient(180deg, lighten($color, 12%) 0%, $color 55%, darken($color, 8%) 100%);
-  color: #fff;
+  color: $text-white;
   font-weight: 700;
   font-size: $fs-body;
   border-radius: 6px 6px 0 0;
@@ -33,13 +91,13 @@
   clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
 }
 
-@mixin tab-header-right($color: #3d9ae8) {
+@mixin tab-header-right($color: $accent-blue) {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.85rem 0.35rem 1.25rem;
   background: linear-gradient(180deg, lighten($color, 12%) 0%, $color 55%, darken($color, 8%) 100%);
-  color: #fff;
+  color: $text-white;
   font-weight: 700;
   font-size: $fs-body;
   border-radius: 6px 6px 0 0;

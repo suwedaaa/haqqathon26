@@ -1,22 +1,33 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
+.frame {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
 .shell {
   border-radius: 0;
   overflow: visible;
 }
 
 .windowBody {
-  padding: 0.75rem 1rem 1.5rem;
-  background: rgba(255, 255, 255, 0.5) !important;
+  padding: 1rem 2rem 1.75rem;
+  background: $shell-body-bg !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+
+  @media (min-width: $breakpoint-md) {
+    padding: 1.25rem 3.25rem 2.25rem;
+  }
 }
 
 .grid,
 .grid2 {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.65rem;
 
   @media (min-width: $breakpoint-lg) {
     grid-template-columns: 1fr 1fr;
@@ -25,18 +36,19 @@
 }
 
 .grid2 {
-  margin-top: 1.25rem;
+  margin-top: 1.65rem;
 }
 
 .left,
 .right {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.65rem;
 }
 
 .fullWidth {
-  margin-top: 1.25rem;
+  margin-top: 1.65rem;
+  overflow: visible;
 
   @media (min-width: $breakpoint-lg) {
     max-width: 75%;

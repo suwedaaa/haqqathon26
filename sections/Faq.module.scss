@@ -46,7 +46,7 @@
 .header {
   width: 100%;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0.75rem;
@@ -56,10 +56,6 @@
   text-align: left;
   font-family: $font-ui;
   color: $text-on-glass;
-}
-
-.leftIcon {
-  font-size: $fs-body-sm;
 }
 
 .question {
@@ -104,7 +100,7 @@
   @include glossy-pill(#6ec4ff, #2a8fd4);
   padding: 0.45rem 1.25rem;
   border-radius: $radius-pill;
-  color: #fff;
+  color: $text-white;
   font-weight: 700;
   font-size: $fs-btn-sm;
   text-decoration: none;

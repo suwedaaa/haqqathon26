@@ -51,7 +51,7 @@ export default function Countdown() {
   );
 
   return (
-    <XPWindow title="how long until the haqqathon?" floating>
+    <XPWindow title="how long left?" floating>
       <p className={styles.date}>20th &ndash; 21st June 2026</p>
       <p className={styles.timer}>{label}</p>
       <div className={styles.progress} role="progressbar" aria-valuenow={progress}>

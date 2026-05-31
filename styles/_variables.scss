@@ -3,23 +3,42 @@ $sky-top: #b8e4ff;
 $sky-mid: #9fd4f5;
 $sky-bottom: #d4f0e8;
 
+// Text colors
 $text-primary: #1a3a52;
 $text-secondary: #2d6a9e;
 $text-on-glass: #234a66;
+$text-white: #fff;
+$text-black: #000;
+$text-muted: #444;
+$text-disabled: #ccc;
 
 $accent-blue: #3d9ae8;
 $accent-blue-dark: #1e6fb8;
+$accent-primary: $accent-blue;
 $accent-green: #5cd65c;
 $accent-green-dark: #2da82d;
 
 $glass-bg: rgba(255, 255, 255, 0.55);
 $glass-border: rgba(255, 255, 255, 0.8);
+$glass-white-strong: rgba(255, 255, 255, 0.95);
+$glass-white-soft: rgba(255, 255, 255, 0.92);
+$glass-white-border: rgba(255, 255, 255, 0.45);
+$glass-white-highlight: rgba(255, 255, 255, 0.55);
 
 $overlay-tint: rgba(180, 220, 255, 0.1);
 $overlay-scanlines: rgba(255, 255, 255, 0.08);
 
 $shell-bg: rgba(200, 230, 255, 0.35);
 $shell-border: rgba(255, 255, 255, 0.65);
+$shell-body-bg: rgba(255, 255, 255, 0.5);
+
+$border-xp-muted: #aca899;
+
+// Button colors
+$btn-text: $text-white;
+$btn-green-border: #29922d;
+$glossy-blue-mid: #4aadef;
+$glossy-blue-dark: #1568b0;
 
 $font-ui: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 $font-display: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -33,6 +52,15 @@ $fs-small: 0.8rem;
 $fs-xs: 0.75rem;
 $fs-btn: 1rem;
 $fs-btn-sm: 0.85rem;
+$fs-btn-lg: 1.08rem;
+$fs-btn-nav-sm: 0.82rem;
+$fs-btn-nav-md: 1.14rem;
+$fs-btn-nav-lg: 1.22rem;
+$fs-btn-nav-xs: 0.68rem;
+$fs-display: 1.5rem;
+$fs-countdown: clamp(1.75rem, 5vw, 2.5rem);
+$fs-icon-lg: 1.75rem;
+$fs-timeline-time: $fs-subtitle;
 
 $radius-lg: 20px;
 $radius-md: 12px;
@@ -48,3 +76,17 @@ $placeholder-image: "/speakers/areeb-siddiqui.png";
 
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
+
+// XP taskbar
+$taskbar-blue-light: #3b85e0;
+$taskbar-blue-mid: #2e7ee1;
+$taskbar-blue-dark: #196edb;
+$taskbar-blue-deep: #0f61cb;
+$taskbar-border-top: #1040a0;
+$taskbar-start-light: #67d567;
+$taskbar-start-mid: #43c043;
+$taskbar-start-dark: #2da02d;
+$taskbar-start-border: #1a701a;
+$taskbar-btn-active-top: #1c5cb0;
+$taskbar-btn-active-bottom: #133f8a;
+$fs-taskbar: 0.72rem;

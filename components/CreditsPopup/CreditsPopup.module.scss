@@ -1,0 +1,73 @@
+@import "../../styles/variables";
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: transparent;
+}
+
+.popup {
+  position: fixed;
+  left: 50%;
+  bottom: 4.5rem;
+  z-index: 9999;
+  width: min(22rem, calc(100vw - 2rem));
+  transform: translateX(-50%);
+  filter: drop-shadow(4px 8px 16px rgba(0, 40, 80, 0.35));
+}
+
+.body {
+  padding: 0.65rem 0.75rem !important;
+  background: $shell-body-bg !important;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 0.75rem;
+  padding: 0.35rem 0.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.name {
+  font-family: $font-ui;
+  font-size: $fs-body-sm;
+  font-weight: 700;
+  color: $text-black;
+}
+
+.links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: $fs-small;
+
+  a {
+    color: $accent-blue-dark;
+    text-decoration: underline;
+
+    &:hover {
+      color: $accent-blue;
+    }
+  }
+}
+
+.sep {
+  color: $text-muted;
+}
