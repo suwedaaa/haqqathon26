@@ -6,18 +6,18 @@ import MenuLabel from "@/components/MenuLabel";
 import styles from "./ErrorOverlay.module.scss";
 
 const ERROR_MESSAGES = [
-  "ERROR: Deadline approaching!",
-  "FATAL: Not enough coffee",
-  "ERROR: Motivation.exe not found",
-  "WARNING: Sleep levels critical",
-  "ERROR: Too many tabs open",
-  "FATAL: Stack overflow in brain.js",
-  "ERROR: Cannot read property 'chill'",
-  "WARNING: Procrastination detected",
-  "ERROR: 404 - Free time not found",
-  "FATAL: Unhandled promise rejection",
-  "ERROR: Out of memory (yours)",
-  "WARNING: Burnout imminent",
+    "ERROR: Haqqathon deadline approaching!",
+    "WARNING: Sign-up not detected",
+    "ERROR: Registration still pending",
+    "WARNING: Team not assembled yet",
+    "ERROR: Idea not found",
+    "WARNING: Brainstorming required",
+    "ERROR: Hackathon prep incomplete",
+    "WARNING: Spots may be filling up",
+    "ERROR: Commitment.exe not launched",
+    "WARNING: Waiting too long is risky",
+    "ERROR: Project idea still loading",
+    "WARNING: Future you wants you to sign up",
 ];
 
 type ErrorPopup = {
