@@ -67,6 +67,8 @@ export default function Timeline() {
         alt=""
         width={120}
         height={120}
+        sizes="80px"
+        loading="lazy"
         className={styles.dolphin}
         aria-hidden
       />
@@ -89,6 +91,8 @@ export default function Timeline() {
                 alt=""
                 width={52}
                 height={52}
+                sizes="40px"
+                loading="lazy"
                 className={styles.icon}
                 aria-hidden
               />

@@ -12,6 +12,8 @@ export default function About() {
           alt=""
           width={120}
           height={120}
+          sizes="80px"
+          loading="lazy"
           className={styles.globe}
           aria-hidden
         />

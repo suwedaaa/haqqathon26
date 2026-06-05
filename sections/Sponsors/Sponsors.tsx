@@ -40,6 +40,8 @@ export default function Sponsors() {
                 alt={sponsorLogos[selected].name}
                 width={240}
                 height={240}
+                sizes="200px"
+                loading="lazy"
                 className={styles.previewImage}
               />
             </div>
@@ -85,6 +87,8 @@ export default function Sponsors() {
                       alt={sponsor.name}
                       width={64}
                       height={64}
+                      sizes="48px"
+                      loading="lazy"
                       className={styles.logoImg}
                     />
                   </button>

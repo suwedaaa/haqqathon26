@@ -46,6 +46,8 @@ export default function PastSubmissions() {
           alt=""
           width={20}
           height={20}
+          sizes="20px"
+          loading="lazy"
           className={styles.envelope}
           aria-hidden
         />
@@ -89,6 +91,8 @@ export default function PastSubmissions() {
         alt=""
         width={140}
         height={140}
+        sizes="100px"
+        loading="lazy"
         className={styles.monitor}
         aria-hidden
       />

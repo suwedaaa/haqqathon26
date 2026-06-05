@@ -72,6 +72,7 @@ export default function Taskbar() {
             alt=""
             width={18}
             height={18}
+            sizes="18px"
             className={styles.startIcon}
             aria-hidden
           />
@@ -85,7 +86,7 @@ export default function Taskbar() {
             onClick={() => toggleTeam("designers")}
             aria-pressed={activeTeam === "designers"}
           >
-            <Image src="/globe.png" alt="" width={16} height={16} className={styles.taskIcon} />
+            <Image src="/globe.png" alt="" width={16} height={16} sizes="16px" className={styles.taskIcon} />
             <span className={styles.taskLabelLong}>{creditLabels.designers}</span>
             <span className={styles.taskLabelShort}>{creditLabelsShort.designers}</span>
           </button>
@@ -101,6 +102,7 @@ export default function Taskbar() {
               alt=""
               width={16}
               height={16}
+              sizes="16px"
               className={styles.taskIcon}
             />
             <span className={styles.taskLabelLong}>{creditLabels.developers}</span>
@@ -109,9 +111,9 @@ export default function Taskbar() {
         </div>
 
         <div className={styles.tray}>
-          <Image src="/blue-star.png" alt="" width={16} height={16} aria-hidden />
-          <Image src="/blue-music-note.png" alt="" width={16} height={16} aria-hidden />
-          <Image src="/dolphin.png" alt="" width={16} height={16} aria-hidden />
+          <Image src="/blue-star.png" alt="" width={16} height={16} sizes="16px" aria-hidden />
+          <Image src="/blue-music-note.png" alt="" width={16} height={16} sizes="16px" aria-hidden />
+          <Image src="/dolphin.png" alt="" width={16} height={16} sizes="16px" aria-hidden />
           <time className={styles.clock} dateTime={clock}>
             {clock || "—"}
           </time>

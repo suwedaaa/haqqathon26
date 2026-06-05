@@ -17,6 +17,8 @@ export default function MapLocation() {
             alt="Haqqathon venue location"
             width={500}
             height={350}
+            sizes="(max-width: 768px) 90vw, 450px"
+            loading="lazy"
             className={styles.map}
           />
         </a>

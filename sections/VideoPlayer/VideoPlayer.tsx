@@ -13,6 +13,8 @@ export default function VideoPlayer() {
         alt=""
         width={80}
         height={80}
+        sizes="60px"
+        loading="lazy"
         className={styles.youtubeIcon}
         aria-hidden
       />
@@ -52,6 +54,8 @@ export default function VideoPlayer() {
         alt=""
         width={70}
         height={70}
+        sizes="50px"
+        loading="lazy"
         className={styles.musicNote}
         aria-hidden
       />

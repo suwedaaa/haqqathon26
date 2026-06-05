@@ -30,6 +30,7 @@ export default function GlassPanel({
               alt={iconAlt}
               width={18}
               height={18}
+              sizes="18px"
               className={styles.tabIcon}
             />
           ) : null}

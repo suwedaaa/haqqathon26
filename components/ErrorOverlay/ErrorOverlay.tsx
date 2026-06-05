@@ -8,16 +8,24 @@ import styles from "./ErrorOverlay.module.scss";
 const ERROR_MESSAGES = [
     "ERROR: Haqqathon deadline approaching!",
     "WARNING: Sign-up not detected",
+    "QUESTION: Are you going to take the orange pill or the teal pill?",
     "ERROR: Registration still pending",
     "WARNING: Team not assembled yet",
     "ERROR: Idea not found",
+    "QUESTION: Are you going to take the orange pill or the teal pill?",
     "WARNING: Brainstorming required",
+    "QUESTION: Are you going to take the orange pill or the teal pill?",
     "ERROR: Hackathon prep incomplete",
     "WARNING: Spots may be filling up",
+    "QUESTION: Are you going to take the orange pill or the teal pill?",
     "ERROR: Commitment.exe not launched",
+    "QUESTION: Are you going to take the orange pill or the teal pill?",
     "WARNING: Waiting too long is risky",
     "ERROR: Project idea still loading",
+    "QUESTION: Are you going to take the orange pill or the teal pill?",
     "WARNING: Future you wants you to sign up",
+    "WARNING: Do not miss the deadline",
+    "QUESTION: Are you going to take the orange pill or the teal pill?",
 ];
 
 type ErrorPopup = {
@@ -108,7 +116,7 @@ export default function ErrorOverlay({ hintUrl, onClose }: Props) {
             <div className="title-bar">
               <div className="title-bar-text">Do you want a hint?</div>
               <div className="title-bar-controls">
-                <button type="button" aria-label="Close" />
+                <button type="button" aria-label="Close" onClick={onClose} />
               </div>
             </div>
             <div className="window-body">

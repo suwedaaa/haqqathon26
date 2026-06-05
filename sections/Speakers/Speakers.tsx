@@ -51,6 +51,8 @@ export default function Speakers() {
               alt={featuredSpeaker.name}
               width={320}
               height={380}
+              sizes="(max-width: 768px) 80vw, 320px"
+              loading="lazy"
               className={styles.portrait}
             />
           </div>

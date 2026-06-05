@@ -35,7 +35,7 @@ export default function Nav() {
               rel="noopener noreferrer"
               aria-label={link.label}
             >
-              <Image src={link.icon} alt="" width={20} height={20} />
+              <Image src={link.icon} alt="" width={20} height={20} sizes="20px" />
             </a>
           ))}
         </div>
