@@ -1,20 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { pastSubmissionImages } from "@/data/pastSubmissions";
 import { assetPath } from "@/lib/assets";
 import styles from "./PastSubmissions.module.scss";
 
-const PAGE_SIZE = 4;
+function usePageSize() {
+  const [size, setSize] = useState(4);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 768px)");
+    const update = (e: MediaQueryList | MediaQueryListEvent) =>
+      setSize(e.matches ? 2 : 4);
+    update(mql);
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
+
+  return size;
+}
 
 export default function PastSubmissions() {
+  const pageSize = usePageSize();
   const [page, setPage] = useState(0);
-  const totalPages = Math.max(1, Math.ceil(pastSubmissionImages.length / PAGE_SIZE));
+  const totalPages = Math.max(1, Math.ceil(pastSubmissionImages.length / pageSize));
+
+  useEffect(() => {
+    setPage((p) => Math.min(p, totalPages - 1));
+  }, [totalPages]);
   const visible = pastSubmissionImages.slice(
-    page * PAGE_SIZE,
-    page * PAGE_SIZE + PAGE_SIZE
+    page * pageSize,
+    page * pageSize + pageSize
   );
 
   const prev = () => setPage((p) => (p === 0 ? totalPages - 1 : p - 1));

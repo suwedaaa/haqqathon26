@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     "The largest Muslim student-led hackathon in the world, empowering the next generation of innovators to build impactful solutions.",
   icons: {
     icon: "/STEMM_logo.svg",
+    apple: "/STEMM_logo.svg",
+  },
+  openGraph: {
+    title: "STEMM Haqqathon",
+    description:
+      "The largest Muslim student-led hackathon in the world, empowering the next generation of innovators to build impactful solutions.",
+    images: [{ url: "/STEMM_logo.svg" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "STEMM Haqqathon",
+    description:
+      "The largest Muslim student-led hackathon in the world, empowering the next generation of innovators to build impactful solutions.",
+    images: ["/STEMM_logo.svg"],
   },
 };
 
