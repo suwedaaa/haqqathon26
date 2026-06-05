@@ -2,24 +2,24 @@
 
 import { useState } from "react"
 import styles from "./SpeakerCarousel.module.scss"
-import { speakers } from "@/data/speakers"
+import { SpeakerGallery } from "@/data/speakers"
 
 export default function SpeakerCarousel() {
 
   const [index, setIndex] = useState(0)
 
-  const speaker = speakers[index]
+  const speaker = SpeakerGallery[index]
 
   function next() {
 
-    setIndex((prev) => (prev + 1) % speakers.length)
+    setIndex((prev) => (prev + 1) % SpeakerGallery.length)
 
   }
 
   function prev() {
 
     setIndex((prev) =>
-      prev === 0 ? speakers.length - 1 : prev - 1
+      prev === 0 ? SpeakerGallery.length - 1 : prev - 1
     )
 
   }
@@ -47,7 +47,7 @@ export default function SpeakerCarousel() {
 
           <h3>{speaker.name}</h3>
 
-          <p>{speaker.bio}</p>
+          <p>{speaker.role}</p>
 
         </div>
 

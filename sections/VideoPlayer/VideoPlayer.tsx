@@ -28,8 +28,8 @@ export default function VideoPlayer() {
         </div>
         <div className={styles.videoContainer}>
           <iframe
-            src="https://www.youtube.com/embed/yDk9btDZojo?si=1QHw6uzA_cbh1z5W"
-            title="Haqqathon 2025 Official Trailer"
+            src="https://youtu.be/_58eQmuUFa8?si=TN02pCB2h4uoH4nN"
+            title="Haqqathon 2026 Official Trailer"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className={styles.iframe}

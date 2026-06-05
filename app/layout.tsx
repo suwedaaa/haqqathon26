@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "STEMM Haqqathon",
   description:
     "The largest Muslim student-led hackathon in the world, empowering the next generation of innovators to build impactful solutions.",
+  icons: {
+    icon: "/STEMM_logo.svg",
+  },
 };
 
 export default function RootLayout({
