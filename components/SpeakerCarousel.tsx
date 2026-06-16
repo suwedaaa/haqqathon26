@@ -1,8 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import styles from "./SpeakerCarousel.module.scss"
 import { SpeakerGallery } from "@/data/speakers"
+
+const AUTO_ADVANCE_MS = 5000
 
 export default function SpeakerCarousel() {
 
@@ -10,19 +12,20 @@ export default function SpeakerCarousel() {
 
   const speaker = SpeakerGallery[index]
 
-  function next() {
-
+  const next = useCallback(() => {
     setIndex((prev) => (prev + 1) % SpeakerGallery.length)
+  }, [])
 
-  }
-
-  function prev() {
-
+  const prev = useCallback(() => {
     setIndex((prev) =>
       prev === 0 ? SpeakerGallery.length - 1 : prev - 1
     )
+  }, [])
 
-  }
+  useEffect(() => {
+    const timer = window.setInterval(next, AUTO_ADVANCE_MS)
+    return () => window.clearInterval(timer)
+  }, [next])
 
   return (
 
@@ -31,11 +34,11 @@ export default function SpeakerCarousel() {
       <div className={styles.card}>
 
         <button
+          type="button"
           className={`${styles.arrow} ${styles.left}`}
           onClick={prev}
-        >
-          ◀
-        </button>
+          aria-label="Previous speaker"
+        />
 
         <img
           src={speaker.image}
@@ -52,11 +55,11 @@ export default function SpeakerCarousel() {
         </div>
 
         <button
+          type="button"
           className={`${styles.arrow} ${styles.right}`}
           onClick={next}
-        >
-          ▶
-        </button>
+          aria-label="Next speaker"
+        />
 
       </div>
 

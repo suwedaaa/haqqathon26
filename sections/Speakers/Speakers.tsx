@@ -1,13 +1,16 @@
 "use client";
 
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import XPWindow from "@/components/XPWindow/XPWindow";
 import MenuLabel from "@/components/MenuLabel";
-import { featuredSpeaker } from "@/data/speakers";
+import { SpeakerGallery } from "@/data/speakers";
 import { SIGN_UP_URL } from "@/data/event";
 import { assetPath } from "@/lib/assets";
 import styles from "./Speakers.module.scss";
+
+const AUTO_ADVANCE_MS = 5000;
 
 const PALETTE = [
   "#000", "#808080", "#800000", "#808000", "#008000", "#008080",
@@ -17,14 +20,29 @@ const PALETTE = [
 
 const floatTransition = { duration: 4, repeat: Infinity, repeatType: "reverse" as const };
 
-const MINI_WINDOWS = [
-  { label: "Follow", href: featuredSpeaker.follow },
-  { label: "Contact", href: featuredSpeaker.contact },
-  { label: "Get Involved", href: SIGN_UP_URL },
-];
-
 export default function Speakers() {
-  const image = assetPath(featuredSpeaker.image);
+  const [index, setIndex] = useState(0);
+  const speaker = SpeakerGallery[index];
+  const image = assetPath(speaker.image);
+
+  const next = useCallback(() => {
+    setIndex((prev) => (prev + 1) % SpeakerGallery.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setIndex((prev) => (prev === 0 ? SpeakerGallery.length - 1 : prev - 1));
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(next, AUTO_ADVANCE_MS);
+    return () => window.clearInterval(timer);
+  }, [next]);
+
+  const miniWindows = [
+    speaker.follow ? { label: "Follow", href: speaker.follow } : null,
+    speaker.contact ? { label: "Contact", href: speaker.contact } : null,
+    { label: "Get Involved", href: SIGN_UP_URL },
+  ].filter((item): item is { label: string; href: string } => item !== null);
 
   return (
     <section id="Speakers" className={styles.section}>
@@ -48,9 +66,9 @@ export default function Speakers() {
           <div className={styles.canvas}>
             <Image
               src={image}
-              alt={featuredSpeaker.name}
-              width={320}
-              height={380}
+              alt={speaker.name}
+              width={400}
+              height={400}
               sizes="(max-width: 768px) 80vw, 320px"
               loading="lazy"
               className={styles.portrait}
@@ -68,18 +86,33 @@ export default function Speakers() {
         </p>
 
         <div className={styles.overlays}>
-          {/* Profile card — top right */}
           <motion.div
             className={styles.profileWindow}
             animate={{ y: [0, -6, 0] }}
             transition={floatTransition}
           >
-            <XPWindow title={featuredSpeaker.name} floating animate={false} closeOnly>
+            <XPWindow title="Speaker" floating animate={false} closeOnly>
               <div className={styles.profileBody}>
-                <span className={styles.avatar} aria-hidden />
-                <div className={styles.profileText}>
-                  <strong>{featuredSpeaker.name}</strong>
-                  <span>{featuredSpeaker.role}</span>
+                <div className={styles.profileHeader}>
+                  <span className={styles.avatar} aria-hidden />
+                  <div className={styles.profileText}>
+                    <strong>{speaker.name}</strong>
+                    <span>{speaker.role}</span>
+                  </div>
+                </div>
+                <div className={styles.navControls}>
+                  <button
+                    type="button"
+                    className={`${styles.navButton} ${styles.navPrev}`}
+                    onClick={prev}
+                    aria-label="Previous speaker"
+                  />
+                  <button
+                    type="button"
+                    className={`${styles.navButton} ${styles.navNext}`}
+                    onClick={next}
+                    aria-label="Next speaker"
+                  />
                 </div>
               </div>
             </XPWindow>
@@ -91,7 +124,7 @@ export default function Speakers() {
             animate={{ y: [0, 5, 0] }}
             transition={{ ...floatTransition, delay: 0.5 }}
           >
-            {MINI_WINDOWS.map(({ label, href }) => (
+            {miniWindows.map(({ label, href }) => (
               <XPWindow key={label} title={label} floating animate={false} closeOnly>
                 <div className={styles.miniBody}>
                   <button

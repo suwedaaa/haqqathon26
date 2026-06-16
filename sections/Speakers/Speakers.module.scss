@@ -59,8 +59,9 @@
 .portrait {
   width: 100%;
   max-width: 320px;
-  height: auto;
+  aspect-ratio: 1;
   object-fit: cover;
+  object-position: center bottom;
 }
 
 .palette {
@@ -95,7 +96,6 @@
   z-index: 10;
 }
 
-// Profile card — top right
 .profileWindow {
   position: absolute;
   pointer-events: auto;
@@ -107,12 +107,19 @@
 
 .profileBody {
   display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.15rem 0 0;
+}
+
+.profileHeader {
+  display: flex;
   gap: 0.5rem;
   align-items: center;
-  padding: 0.15rem 0;
 }
 
 .avatar {
+  flex-shrink: 0;
   width: 32px;
   height: 32px;
   background: #c0c0c0;
@@ -122,12 +129,66 @@
 .profileText strong {
   display: block;
   font-size: $fs-btn-sm;
+  line-height: 1.1;
   color: $text-black;
 }
 
 .profileText span {
+  display: block;
   font-size: $fs-xs;
+  line-height: 1.1;
   color: $text-black;
+}
+
+.navControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  padding-top: 0.2rem;
+  border-top: 1px solid #aca899;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  background: linear-gradient(180deg, #fff 0%, #ece9d8 100%);
+  border: 1px solid #808080;
+  box-shadow:
+    inset 1px 1px 0 #fff,
+    inset -1px -1px 0 #404040;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+  }
+
+  &:hover {
+    filter: brightness(1.03);
+  }
+
+  &:active {
+    box-shadow:
+      inset -1px -1px 0 #fff,
+      inset 1px 1px 0 #404040;
+  }
+}
+
+.navPrev::after {
+  border-right: 3px solid #000;
+}
+
+.navNext::after {
+  border-left: 3px solid #000;
 }
 
 .miniBody {
@@ -139,7 +200,6 @@
   }
 }
 
-// Contact / Follow / Get Involved — right side, cascading overlapping
 .miniStack {
   position: absolute;
   pointer-events: auto;
@@ -160,7 +220,6 @@
   }
 }
 
-// Join us! — bottom left
 .joinWindow {
   position: absolute;
   pointer-events: auto;

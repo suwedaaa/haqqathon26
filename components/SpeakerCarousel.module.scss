@@ -61,12 +61,27 @@
   top: 50%;
   transform: translateY(-50%);
 
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
   background: transparent;
-  border: none;
-
-  color: $accent-primary;
-  font-size: $fs-icon-lg;
+  border: 1px solid $border-color;
+  border-radius: 50%;
   cursor: pointer;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+
+  &:hover {
+    filter: brightness(1.05);
+  }
 
 }
 
@@ -74,11 +89,21 @@
 
   left: 20px;
 
+  &::after {
+    border-right: 7px solid $accent-primary;
+    margin-right: 2px;
+  }
+
 }
 
 .right {
 
   right: 20px;
+
+  &::after {
+    border-left: 7px solid $accent-primary;
+    margin-left: 2px;
+  }
 
 }
 
